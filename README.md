@@ -1,2 +1,2 @@
-# VisualPhonetics
-Vowel Visualization
+# Visual Phonetics
+Vowel Visualization Web Application
