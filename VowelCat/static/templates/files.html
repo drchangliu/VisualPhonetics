@@ -1,0 +1,22 @@
+{% extends 'user_base.html' %}        
+
+{% block content %}
+  <h2>Upload your files!</h2>
+  <form action="/upload/" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <p>Please specify a file:<br>
+      <input type="text" name="title" size="30">
+      <input id="sym-file" name="file" type="file" accept=".sym" multiple size="40">
+    </p>
+    <div>
+      <a class="btn btn-primary" href="/upload/">Submit</a>
+    </div>
+    <script type="text/javascript">
+       $('#sym-file').bind('click', function() {
+         alert('This file size is: ' + this.files[0].size/1024/1024 + "MB");
+       });
+   </script>
+  </form>
+
+<h2>These are the uploaded files</h2>
+{% endblock %}

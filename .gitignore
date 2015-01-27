@@ -26,3 +26,15 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# Don't allow .pyc files to be added
+*.pyc
+
+# Don't add secret_settings.py to GitHub
+secret_settings.py
+
+# Don't add sqlite
+db.sqlite3
+
+# Don't allow .DS_Store to be added
+.DS_Store
