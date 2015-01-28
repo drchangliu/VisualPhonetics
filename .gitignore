@@ -39,4 +39,5 @@ db.sqlite3
 # Don't allow .DS_Store to be added
 .DS_Store
 
-/VowelCat/static/media/images/avatars/*
+# Don't add avatars
+VowelCat/static/media/images/avatars/*
