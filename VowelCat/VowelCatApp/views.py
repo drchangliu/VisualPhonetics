@@ -51,7 +51,7 @@ def register_success(request):
 @login_required(login_url='/')
 def update_user(request):
     if request.method == 'POST':
-        form = MyChangeForm(request.POST, instance=request.user)
+        form = MyChangeForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             user = form.save(commit=False)
             user.save()

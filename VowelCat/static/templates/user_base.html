@@ -48,7 +48,11 @@
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <a href="/update_user/">
-              <img id="blank_user" src="/static/media/images/blank-user.jpg" alt="Blank user" style="width:30px;height:30px;border:0">
+	      {% ifequal user.avatar None %}
+                <img id="blank_user" src="/static/media/images/blank-user.jpg" alt="Blank user" style="width:30px;height:30px;border:0">
+	      {% else %}
+                <img id="profile_pic" src="{{ user.avatar }}" alt="Profile picture" style="width:30px;height:30px;border:0">
+	      {% endifequal %}
             </a>
 	    <a class="btn btn-primary" href="/logout/">Logout</a>
           </form>

@@ -98,5 +98,4 @@ class MyChangeForm(forms.ModelForm):
             """
             pass
 
-        has_picture = True
         return avatar

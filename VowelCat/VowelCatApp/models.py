@@ -11,7 +11,6 @@ class MyUserManager(BaseUserManager):
             email=MyUserManager.normalize_email(email),
             is_staff = False,
 	    date_of_birth = date_of_birth,
-            has_picture = False,
 	    gender=gender,
         )
 
@@ -46,8 +45,7 @@ class MyUser(AbstractBaseUser):
     first_name = models.TextField('first name', default=None, null=True)
     last_name = models.TextField('last name', default=None, null=True)
     date_of_birth = models.DateField('date of birth', null=True)
-    avatar = models.ImageField('profile picture', null=True, blank=True)
-    has_picture = models.BooleanField('has profile picture', default=False)
+    avatar = models.ImageField('profile picture', upload_to='static/media/images/avatars/', null=True, blank=True)
     adult = models.BooleanField('is adult', default=False)
     gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES)
 
@@ -63,12 +61,6 @@ class MyUser(AbstractBaseUser):
     def get_email(self):
 	return self.email
 
-    def get_profile_picture(self):
-	return self.avatar
-
-    def has_profile_picture(self):
-	return self.has_picture
-
     def get_gender(self):
 	return self.gender
 
@@ -79,7 +71,6 @@ class MyUser(AbstractBaseUser):
 
     def is_adult(self):
   	return self.adult
-
 
     def set_avatar(self):
 	self.has_picture = True
