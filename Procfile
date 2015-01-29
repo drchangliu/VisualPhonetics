@@ -1,1 +1,1 @@
-web: gunicorn VowelCat.wsgi --preload
+web: gunicorn VowelCat.wsgi --preload -
