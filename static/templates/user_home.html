@@ -1,0 +1,19 @@
+{% extends 'user_base.html' %}        
+
+{% block content %}
+
+{% ifequal user.get_short_name user.get_email %}
+  <h2>Hello!</h2>
+{% else %}
+  <h2>Hello, {{user.get_short_name}}! </h2>
+{% endifequal %}
+
+<!--
+{% ifequal user.avatar None %}
+  <img id="blank_user" src="/static/media/images/blank-user.jpg" alt="Blank user" style="width:150px;height:150px;border:0">
+{% else %}
+  <img id="profile_pic" src="{{ user.avatar }}" alt="Profile picture">
+{% endifequal %}
+-->
+
+{% endblock %}

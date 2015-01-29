@@ -1,0 +1,16 @@
+{% extends 'login_base.html' %}
+
+{% block content %}
+
+ <div class="col-sm-3 col-sm-offset-5"> 
+   <h1> Join Now</h1>
+     <form method='POST' action='/register/'> {% csrf_token %}
+	<table>
+         {{ form.as_table }}
+	</table>
+        <input type='Submit' class='btn btn-primary btn-block'>
+     </form>
+
+ </div> 
+
+{% endblock %}     
