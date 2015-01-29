@@ -31,7 +31,7 @@ node_modules
 *.pyc
 
 # Don't add secret_settings.py to GitHub
-secret_settings.py
+# secret_settings.py
 
 # Don't add sqlite
 db.sqlite3
