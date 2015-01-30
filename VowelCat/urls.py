@@ -20,7 +20,7 @@ urlpatterns = (
     url(r'^update_user/', 'VowelCatApp.views.update_user'),
 )
 
-if not settings.DEBUG
+if not settings.DEBUG:
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
     urlpatterns += staticfiles_urlpatterns()
