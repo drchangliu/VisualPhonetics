@@ -93,6 +93,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
+"""
 TEMPLATE_CONTEXT_PROCESSORS = (
     'app.main.context_processors.settings',
     'app.main.context_processors.site',
@@ -100,6 +101,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth'
 )
+"""
 
 # Template location
 

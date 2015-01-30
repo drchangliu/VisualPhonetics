@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+import settings
 
 urlpatterns = (
     url(r'^$', 'VowelCatApp.views.home', name='home'),
@@ -19,3 +20,7 @@ urlpatterns = (
     url(r'^update_user/', 'VowelCatApp.views.update_user'),
 )
 
+if not settings.DEBUG
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+    urlpatterns += staticfiles_urlpatterns()
