@@ -84,7 +84,22 @@ AUTH_PROFILE_MODULE = "account.UserProfile"
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "static")
+STATIC_ROOT = 'static'
+MEDIA_ROOT = 'media'
+
+# List of callables that know how to import templates from various sources.
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'app.main.context_processors.settings',
+    'app.main.context_processors.site',
+
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth'
+)
 
 # Template location
 
