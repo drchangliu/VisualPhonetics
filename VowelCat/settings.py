@@ -96,20 +96,15 @@ TEMPLATE_LOADERS = (
 
 # Template location
 
-"""
 TEMPLATE_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "static", "templates"),
-)
-"""
-
-TEMPLATE_DIRS = (
-  "../VisualPhonetics/static/templates/",
+   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat", "static", "templates"),
 )
 
 STATICFILES_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "static"),
-)
+   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat",  "static"),
 
+)
+"""
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
@@ -119,3 +114,4 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+"""
