@@ -103,7 +103,7 @@ TEMPLATE_DIRS = (
 """
 
 TEMPLATE_DIRS = (
-  "VisualPhonetics/static/templates/",
+  "../VisualPhonetics/static/templates/",
 )
 
 STATICFILES_DIRS = (
