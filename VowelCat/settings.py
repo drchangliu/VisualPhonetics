@@ -97,13 +97,11 @@ TEMPLATE_LOADERS = (
 # Template location
 
 TEMPLATE_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat", "static", "templates"),
-   os.path.join("app", os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat", "static", "templates"),
+   os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
 )
 
 STATICFILES_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat",  "static"),
-   os.path.join("app", os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat",  "static"),
+   os.path.join(os.path.dirname(BASE_DIR), "static"),
 )
 """
 # Parse database configuration from $DATABASE_URL
