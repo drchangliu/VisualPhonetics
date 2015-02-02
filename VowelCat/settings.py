@@ -93,20 +93,17 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
-"""
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'app.main.context_processors.settings',
-    'app.main.context_processors.site',
-
-    'django.core.context_processors.request',
-    'django.contrib.auth.context_processors.auth'
-)
-"""
 
 # Template location
 
+"""
 TEMPLATE_DIRS = (
    os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "static", "templates"),
+)
+"""
+
+TEMPLATE_DIRS = (
+  "VisualPhonetics/static/templates/",
 )
 
 STATICFILES_DIRS = (
