@@ -88,13 +88,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 MEDIA_ROOT = 'media'
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
-
 # Template location
 
 TEMPLATE_DIRS = (
