@@ -85,7 +85,7 @@ AUTH_PROFILE_MODULE = "account.UserProfile"
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = 'static'
 MEDIA_ROOT = 'media'
 
 # Template location
