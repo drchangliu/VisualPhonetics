@@ -95,7 +95,7 @@ TEMPLATE_DIRS = (
 )
 
 STATICFILES_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "static"),
+   os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
 )
 """
 # Parse database configuration from $DATABASE_URL
