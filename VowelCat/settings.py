@@ -33,6 +33,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'VowelCat',
     'VowelCatApp',
 )
 
@@ -97,11 +98,11 @@ TEMPLATE_LOADERS = (
 # Template location
 
 TEMPLATE_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
+   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat", "static", "templates"),
 )
 
 STATICFILES_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "static"),
+   os.path.join(os.path.dirname(BASE_DIR), "VisualPhonetics", "VowelCat", "static"),
 )
 """
 # Parse database configuration from $DATABASE_URL
