@@ -41,3 +41,4 @@ db.sqlite3
 
 # Don't add avatars
 VowelCat/static/media/images/avatars/*
+VowelCat/media/static/media/images/avatars/*
