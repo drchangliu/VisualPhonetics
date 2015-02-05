@@ -1,1 +1,1 @@
-web: gunicorn VowelCat.wsgi --log-file -
+web: python manage.py collectstatic --noinput; gunicorn VowelCat.wsgi --log-file -
