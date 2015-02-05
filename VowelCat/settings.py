@@ -90,7 +90,7 @@ AUTH_PROFILE_MODULE = "account.UserProfile"
 STATIC_URL = '/static/'
 
 STATIC_ROOT = 'staticfiles'
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = 'staticfiles/media'
 
 # Template location
 
@@ -102,18 +102,23 @@ STATICFILES_DIRS = (
    os.path.join(os.path.dirname(BASE_DIR), "static"),
 )
 
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+
+"""
+try:
+  # Parse database configuration from $DATABASE_URL
+  import dj_database_url
+  DATABASES['default'] =  dj_database_url.config()
+
+  # Allow all host headers
+  ALLOWED_HOSTS = ['*']
+
+  # Simplified static file serving.
+  # https://warehouse.python.org/project/whitenoise/
+  STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+except:
+  pass
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-
-
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+"""
