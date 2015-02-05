@@ -95,13 +95,12 @@ MEDIA_ROOT = 'staticfiles/media'
 # Template location
 
 TEMPLATE_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "templates"),
+   os.path.join(os.path.dirname(BASE_DIR), "VowelCat", "templates"),
 )
 
 STATICFILES_DIRS = (
-   os.path.join(os.path.dirname(BASE_DIR), "static"),
+   os.path.join(os.path.dirname(BASE_DIR), "VowelCat", "static"),
 )
-
 
 try:
   # Parse database configuration from $DATABASE_URL
