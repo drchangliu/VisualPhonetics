@@ -43,3 +43,4 @@ db.sqlite3
 VowelCat/static/media/images/avatars/*
 VowelCat/media/static/media/images/avatars/*
 staticfiles
+media
