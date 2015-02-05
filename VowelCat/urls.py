@@ -18,8 +18,12 @@ urlpatterns = (
     url(r'^training/', 'VowelCatApp.views.training'),
     url(r'^upload/', 'VowelCatApp.views.upload'),
     url(r'^update_user/', 'VowelCatApp.views.update_user'),
+    url(r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+
 )
 
-urlpatterns += patterns('',
+"""
+urlpatterns += 
     (r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
+"""
