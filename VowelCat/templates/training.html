@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% load staticfiles %}
+{% load static %}
 
 	<script src="/static/static/js/audiodisplay.js"></script>
 	<script src="/static/static/js/recorderjs/recorder.js"></script>
@@ -53,8 +53,8 @@
 		<canvas id="wavedisplay" width="1024" height="300"></canvas>
 	</div>
 	<div id="controls">
-		<img id="record" src="/static/media/images/mic128.png" alt="Toggle recording" onclick="toggleRecording(this);">
-		<a id="save" href="#"><img src="/static/media/images/save.svg" alt="Save audio"></a>
+		<img id="record" src="{% static "media/images/mic128.png" %}" alt="Toggle recording" onclick="toggleRecording(this);">
+		<a id="save" href="#"><img src="{% static "media/images/save.svg" %}" alt="Save audio"></a>
 	</div>
 
 {% endblock %}
