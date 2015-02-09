@@ -2,7 +2,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 
-urlpatterns = (
+urlpatterns = patterns('', 
     url(r'^$', 'VowelCatApp.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^auth/$', 'VowelCatApp.views.auth_view'),
@@ -18,12 +18,9 @@ urlpatterns = (
     url(r'^training/', 'VowelCatApp.views.training'),
     url(r'^upload/', 'VowelCatApp.views.upload'),
     url(r'^update_user/', 'VowelCatApp.views.update_user'),
-    url(r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
 )
 
-"""
-urlpatterns += 
-    (r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+urlpatterns += patterns('',
+    (r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,'show_indexes': False}),
 )
-"""
