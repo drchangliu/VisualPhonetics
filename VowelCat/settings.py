@@ -105,6 +105,9 @@ try:
   import dj_database_url
   DATABASES['default'] =  dj_database_url.config()
 
+  # Enable Connection Pooling
+  DATABASES['default']['ENGINE'] = 'django_postgrespool'
+
   # Allow all host headers
   ALLOWED_HOSTS = ['*']
 
