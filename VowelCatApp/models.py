@@ -45,7 +45,7 @@ class MyUser(AbstractBaseUser):
     first_name = models.TextField('first name', default=None, null=True)
     last_name = models.TextField('last name', default=None, null=True)
     date_of_birth = models.DateField('date of birth', null=True)
-    avatar = models.ImageField('profile picture', upload_to='static/media/images/avatars/', null=True, blank=True)
+    avatar = models.ImageField('profile picture', upload_to='/static/media/images/avatars/', null=True, blank=True)
     adult = models.BooleanField('is adult', default=False)
     gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES)
 
