@@ -86,6 +86,7 @@ AUTH_PROFILE_MODULE = "account.UserProfile"
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = ''
 
 STATIC_ROOT = 'staticfiles'
 MEDIA_ROOT = 'staticfiles/media'

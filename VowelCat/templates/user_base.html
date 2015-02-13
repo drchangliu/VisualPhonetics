@@ -54,7 +54,7 @@
 	      {% ifequal user.avatar None %}
                 <img id="blank_user" src="{% static "static/media/images/blank-user.jpg" %}" alt="Blank user" style="width:30px;height:30px;border:0">
 	      {% else %}
-                <img id="profile_pic" src="{{ user.avatar }}" alt="Profile picture" style="width:30px;height:30px;border:0">
+                <img id="profile_pic" src="/{{ user.avatar.url }}" alt="Profile picture" style="width:30px;height:30px;border:0">
 	      {% endifequal %}
             </a>
 	    <a class="btn btn-primary" href="/logout/">Logout</a>
