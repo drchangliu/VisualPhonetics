@@ -11,3 +11,5 @@ South==1.0.2
 SQLAlchemy==0.9.8
 static3==0.5.1
 whitenoise==1.0.6
+python==2.76
+
