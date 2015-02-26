@@ -11,9 +11,17 @@ class MyRegistrationForm(forms.ModelForm):
         ('M', 'Male'), 
         ('F', 'Female'),
     )
+
+    USER_TYPE = (
+	('S', 'Student'),
+	('T', 'Teacher'),
+	('B', 'Student/Teacher'),
+    )
+
     email = forms.EmailField(widget=forms.EmailInput,label="Email")
     date_of_birth = forms.DateField(widget=forms.DateInput(format='%m/%d/%Y'), label="Date of birth (MM/DD/YYYY)")
     gender = forms.ChoiceField(widget=RadioSelect, choices=GENDER_CHOICES, label="Gender")
+    user_type = forms.ChoiceField(widget=RadioSelect, choices=USER_TYPE, label="Type of user")
     password1 = forms.CharField(widget=forms.PasswordInput,
                                 label="Password")
     password2 = forms.CharField(widget=forms.PasswordInput,
@@ -21,7 +29,7 @@ class MyRegistrationForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ['email', 'date_of_birth', 'gender', 'password1', 'password2']
+        fields = ['email', 'date_of_birth', 'gender', 'user_type', 'password1', 'password2']
 
     def clean(self):
         """

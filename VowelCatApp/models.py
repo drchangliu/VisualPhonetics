@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, date_of_birth, gender, password=None):
+    def create_user(self, email, date_of_birth, gender, user_type, password=None):
         if not email:
             raise ValueError('Users must have an email address')
 
@@ -12,18 +12,20 @@ class MyUserManager(BaseUserManager):
             is_staff = False,
 	    date_of_birth = date_of_birth,
 	    gender=gender,
+	    user_type=user_type,
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password, date_of_birth, gender):
+    def create_superuser(self, email, password, date_of_birth, gender, user_type):
         user = self.create_user(
 	    email,
             password=password,
 	    date_of_birth=date_of_birth,
 	    gender=gender,
+	    user_type=user_type,
         )
 	user.set_adult()
 	user.is_staff = True
@@ -40,6 +42,13 @@ class MyUser(AbstractBaseUser):
 	('M', 'Male'), 
    	('F', 'Female'),
     )
+
+    USER_TYPE = (
+        ('S', 'Student'),
+        ('T', 'Teacher'),
+        ('B', 'Student/Teacher'),
+    )
+
     email = models.EmailField('email address', unique=True, db_index=True)
     is_staff = models.BooleanField('is staff', default=False)
     first_name = models.TextField('first name', default=None, null=True)
@@ -48,10 +57,11 @@ class MyUser(AbstractBaseUser):
     avatar = models.ImageField('profile picture', upload_to='static/media/images/avatars/', default="static/media/images/blank-user.jpg", null=True, blank=True)
     adult = models.BooleanField('is adult', default=False)
     gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES)
+    user_type = models.CharField('user type', max_length=1, choices=USER_TYPE)
 
     objects = MyUserManager()
 
-    REQUIRED_FIELDS = ['date_of_birth', 'gender']
+    REQUIRED_FIELDS = ['date_of_birth', 'gender', 'user_type']
 
     USERNAME_FIELD = 'email'
 

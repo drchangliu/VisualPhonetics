@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from forms import MyRegistrationForm, MyChangeForm
+from .forms import MyRegistrationForm, MyChangeForm
 
 def home(request):
    c = {}
