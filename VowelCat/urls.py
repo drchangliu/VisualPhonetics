@@ -20,7 +20,8 @@ urlpatterns = patterns('',
     url(r'^update_user/', 'VowelCatApp.views.update_user'),
 
 )
-
+"""
 urlpatterns += patterns('',
     (r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,'show_indexes': False}),
 )
+"""
