@@ -1,16 +1,17 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#not-google-plus-nav">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#vowelcat-nav">
         <span class="sr-only">Toggle Navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Not Google Plus</a>
+      <a class="navbar-brand" href="/">VowelCat</a>
+      <a class="navbar-brand" href="/">Downloads</a>
     </div> <!-- ./navbar-header -->
 
-    <div class="collapse navbar-collapse" id="not-google-plus-nav">
+    <div class="collapse navbar-collapse" id="vowelcat-nav">
       <ul class="nav navbar-nav pull-right">
         {% if user.is_authenticated %}
           <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>
