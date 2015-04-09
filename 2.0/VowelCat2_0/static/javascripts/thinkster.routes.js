@@ -24,11 +24,11 @@
       controller: 'LoginController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/authentication/login.html'
-    }).when('/+:username', {
+    }).when('/:username', {
       controller: 'AccountController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/accounts/account.html'
-    }).when('/+:username/settings', {
+    }).when('/:username/settings', {
       controller: 'AccountSettingsController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/accounts/settings.html'

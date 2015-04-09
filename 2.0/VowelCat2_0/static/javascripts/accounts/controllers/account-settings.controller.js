@@ -32,7 +32,7 @@
      */
     function activate() {
       var authenticatedAccount = Authentication.getAuthenticatedAccount();
-      var username = $routeParams.username.substr(1);
+      var username = $routeParams.username;
 
       // Redirect if not logged in
       if (!authenticatedAccount) {
@@ -41,7 +41,6 @@
       } else {
         // Redirect if logged in, but not the owner of this account.
         if (authenticatedAccount.username !== username) {
-          debugger;
           $location.url('/');
           Snackbar.error('You are not authorized to view this page.');
         }
@@ -104,7 +103,7 @@
      * @memberOf thinkster.accounts.controllers.AccountSettingsController
      */
     function update() {
-      var username = $routeParams.username.substr(1);
+      var username = $routeParams.username;
 
       Account.update(username, vm.account).then(accountSuccessFn, accountErrorFn);
 
