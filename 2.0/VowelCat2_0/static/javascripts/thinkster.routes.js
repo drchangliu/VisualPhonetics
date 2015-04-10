@@ -24,6 +24,8 @@
       controller: 'LoginController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/authentication/login.html'
+    }).when('/downloads', {
+      templateUrl: '/static/templates/layout/downloads.html'
     }).when('/:username', {
       controller: 'AccountController',
       controllerAs: 'vm',
