@@ -13,3 +13,10 @@ six==1.8.0
 sqlparse==0.1.13
 static3==0.5.1
 wsgiref==0.1.2
+django-postgrespool==0.3.0
+path.py==7.2
+Pillow==2.7.0
+South==1.0.2
+SQLAlchemy==0.9.8
+static3==0.5.1
+whitenoise==1.0.6
