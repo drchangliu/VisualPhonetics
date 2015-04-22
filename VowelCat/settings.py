@@ -70,7 +70,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'EST'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -100,7 +100,6 @@ TEMPLATE_DIRS = (
 STATICFILES_DIRS = (
    os.path.join(os.path.dirname(BASE_DIR), "VowelCat", "static"),
 )
-
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
