@@ -42,11 +42,5 @@ db.sqlite3
 # Don't add .env
 .env
 
-# We don't want to see any bower_components
-/2.0/VowelCat2_0/static/bower_components/*
-
-# We don't want staticfiles.
-/2.0/VowelCat2_0/staticfiles
-
-# We don't want dist/static
-/2.0/VowelCat2_0/dist/*
+# We don't need staticfiles
+/staticfiles/*
