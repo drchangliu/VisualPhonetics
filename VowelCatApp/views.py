@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
 
 from .forms import MyRegistrationForm, MyChangeForm
 
@@ -43,7 +44,7 @@ def register_user(request):
       if form.is_valid():
          print "Is valid"
          form.save()
-         return HttpResponseRedirect('/register_success/')
+         return HttpResponseRedirect(reverse('register_success'))
       else:
          print "Is invalid"  
          args = {}

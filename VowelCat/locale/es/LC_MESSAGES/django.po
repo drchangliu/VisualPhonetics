@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-23 12:15+0000\n"
+"POT-Creation-Date: 2015-04-23 16:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,19 +34,44 @@ msgstr "chino"
 msgid "Downloadable content"
 msgstr "Los contenidos downloadables"
 
-#: VowelCat/templates/login_base.html:17
+#: VowelCat/templates/files.html:7
+msgid "Upload your files!"
+msgstr "Subir los archivos"
+
+#: VowelCat/templates/files.html:10
+msgid "Please specify a file:"
+msgstr "Por favor selegir un archivo"
+
+#: VowelCat/templates/files.html:15 VowelCat/templates/register.html:19
+#: VowelCat/templates/update_user.html:12
+msgid "Submit"
+msgstr "Enviar"
+
+#: VowelCat/templates/listening.html:6 VowelCat/templates/user_base.html:48
+msgid "Listening"
+msgstr "Oír"
+
+#: VowelCat/templates/login_base.html:17 VowelCat/templates/user_base.html:16
 #, fuzzy
 #| msgid "Vowel Visualization"
 msgid "VowelCat - Vowel Visualization"
 msgstr "VowelCat - visualización de los vocales"
 
-#: VowelCat/templates/login_base.html:46
+#: VowelCat/templates/login_base.html:46 VowelCat/templates/user_base.html:45
 msgid "Home"
 msgstr "Inicio"
 
-#: VowelCat/templates/login_base.html:47
+#: VowelCat/templates/login_base.html:47 VowelCat/templates/user_base.html:46
 msgid "Downloads"
 msgstr "Downloads"
+
+#: VowelCat/templates/login_base.html:53 VowelCatApp/forms.py:22
+msgid "Email"
+msgstr "Email"
+
+#: VowelCat/templates/login_base.html:56 VowelCatApp/forms.py:26
+msgid "Password"
+msgstr "Contraseña"
 
 #: VowelCat/templates/login_base.html:58
 msgid "Login"
@@ -63,6 +88,86 @@ msgstr "La visualización de los vocales"
 #: VowelCat/templates/login_home.html:8
 msgid " Real-time formant extraction. "
 msgstr "Extracción del formant en tiempo real."
+
+#: VowelCat/templates/logout.html:7
+msgid "You are now logged out."
+msgstr "Usted ha cerrado sesión."
+
+#: VowelCat/templates/practice.html:6
+msgid "Practice now!"
+msgstr "¡Practicar ahora!"
+
+#: VowelCat/templates/register.html:8
+msgid "Join Now"
+msgstr "Registrar ahora"
+
+#: VowelCat/templates/register_success.html:7
+msgid "You have registered!"
+msgstr "¡Usted ha sido registrado!"
+
+#: VowelCat/templates/update_user.html:7
+msgid "Update User"
+msgstr "Actualizar usario"
+
+#: VowelCat/templates/user_base.html:47
+msgid "Files"
+msgstr "Archivos"
+
+#: VowelCat/templates/user_base.html:49
+msgid "Training"
+msgstr "Practicar"
+
+#: VowelCat/templates/user_base.html:62
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: VowelCatApp/forms.py:12
+msgid "Male"
+msgstr "Hombre"
+
+#: VowelCatApp/forms.py:13
+msgid "Female"
+msgstr "Mujer"
+
+#: VowelCatApp/forms.py:17
+msgid "Student"
+msgstr "Estudiante"
+
+#: VowelCatApp/forms.py:18
+msgid "Teacher"
+msgstr "Mentor"
+
+#: VowelCatApp/forms.py:19
+msgid "Student/Teacher"
+msgstr "Estudiante y Mentor"
+
+#: VowelCatApp/forms.py:23
+msgid "Gender"
+msgstr "Género"
+
+#: VowelCatApp/forms.py:24
+msgid "Type of user"
+msgstr "Tipo de usario"
+
+#: VowelCatApp/forms.py:28
+msgid "Password (again)"
+msgstr "Constraseña (otra vez)"
+
+#: VowelCatApp/forms.py:43
+msgid "Passwords don't match. Please enter both fields again."
+msgstr "Las contraseñas tienen errores. Por favor escribir otra vez."
+
+#: VowelCatApp/forms.py:58
+msgid "First name"
+msgstr "Nombre"
+
+#: VowelCatApp/forms.py:59
+msgid "Last name"
+msgstr "Apellido"
+
+#: VowelCatApp/forms.py:60
+msgid "Profile picture"
+msgstr "Avatar"
 
 #: venv/lib/python2.7/site-packages/django/contrib/sitemaps/apps.py:8
 msgid "Site Maps"

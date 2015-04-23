@@ -1,17 +1,17 @@
 {% extends 'user_base.html' %}        
 
+{% load i18n %}
+
+
 {% block content %}
-  <h2>Upload your files!</h2>
+  <h2>{% trans "Upload your files!"%}</h2>
   <form action="/upload/" enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    <p>Please specify a file:<br>
+    <p>{% trans "Please specify a file:"%}<br>
       <input type="text" name="title" size="30">
       <input id="sym-file" name="file" type="file" accept=".sym" multiple size="40">
     </p>
-    <div>
-      <a class="btn btn-primary" href="/upload/">Submit</a>
-    </div>
+      <input value="{% trans "Submit"%}" type="submit" class='btn btn-primary'>
   </form>
 
-<h2>These are the uploaded files</h2>
 {% endblock %}

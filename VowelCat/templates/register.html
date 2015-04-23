@@ -1,9 +1,11 @@
 {% extends 'login_base.html' %}
 
+{% load i18n %}
+
 {% block content %}
 
  <div class="col-sm-3 col-sm-offset-5"> 
-   <h1> Join Now</h1>
+   <h1> {% trans "Join Now"%}</h1>
      <form method='POST' action="{% url 'register' %}"> {% csrf_token %}
      	{% if form.errors %}
           <p style="color: red;">
@@ -12,9 +14,9 @@
        {% endif %}
 
 	<table>
-         {{ form.as_p }}
+         {{ form.as_table }}
 	</table>
-        <input type='Submit' class='btn btn-primary btn-block'>
+        <input value="{% trans "Submit"%}" type="submit" class='btn btn-primary btn-block'>
      </form>
  </div> 
 

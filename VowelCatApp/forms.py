@@ -2,29 +2,30 @@ from django import forms
 from models import MyUser
 from django.forms.widgets import RadioSelect
 from PIL import Image
+from django.utils.translation import ugettext_lazy as _
 
 class MyRegistrationForm(forms.ModelForm):
     """
     Form for registering a new account.
     """
     GENDER_CHOICES = (
-        ('M', 'Male'), 
-        ('F', 'Female'),
+        ('M', _('Male')), 
+        ('F', _('Female')),
     )
 
     USER_TYPE = (
-	('S', 'Student'),
-	('T', 'Teacher'),
-	('B', 'Student/Teacher'),
+	('S', _('Student')),
+	('T', _('Teacher')),
+	('B', _('Student/Teacher')),
     )
 
-    email = forms.EmailField(widget=forms.EmailInput,label="Email")
-    gender = forms.ChoiceField(widget=RadioSelect, choices=GENDER_CHOICES, label="Gender")
-    user_type = forms.ChoiceField(widget=RadioSelect, choices=USER_TYPE, label="Type of user")
+    email = forms.EmailField(widget=forms.EmailInput,label=_("Email"))
+    gender = forms.ChoiceField(widget=RadioSelect, choices=GENDER_CHOICES, label=_("Gender"))
+    user_type = forms.ChoiceField(widget=RadioSelect, choices=USER_TYPE, label=_("Type of user"))
     password1 = forms.CharField(widget=forms.PasswordInput,
-                                label="Password")
+                                label=_("Password"))
     password2 = forms.CharField(widget=forms.PasswordInput,
-                                label="Password (again)")
+                                label=_("Password (again)"))
 
     class Meta:
         model = MyUser
@@ -39,7 +40,7 @@ class MyRegistrationForm(forms.ModelForm):
         cleaned_data = super(MyRegistrationForm, self).clean()
         if 'password1' in self.cleaned_data and 'password2' in self.cleaned_data:
             if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-                raise forms.ValidationError("Passwords don't match. Please enter both fields again.")
+                raise forms.ValidationError(_("Passwords don't match. Please enter both fields again."))
         return self.cleaned_data
 
     def save(self, commit=True):
@@ -54,9 +55,9 @@ class MyChangeForm(forms.ModelForm):
     Form for editing an account.
     """
 
-    first_name = forms.CharField(widget=forms.TextInput, label="First name")
-    last_name = forms.CharField(widget=forms.TextInput, label="Last name")
-    avatar = forms.ImageField(label="Profile picture")
+    first_name = forms.CharField(widget=forms.TextInput, label=_("First name"))
+    last_name = forms.CharField(widget=forms.TextInput, label=_("Last name"))
+    avatar = forms.ImageField(label=_("Profile picture"))
 
     def __init__(self, *args, **kwargs):
 	super(MyChangeForm, self).__init__(*args, **kwargs)
