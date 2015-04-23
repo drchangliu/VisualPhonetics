@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-23 16:54+0000\n"
+"POT-Creation-Date: 2015-04-23 17:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "Subir los archivos"
 msgid "Please specify a file:"
 msgstr "Por favor selegir un archivo"
 
-#: VowelCat/templates/files.html:15 VowelCat/templates/register.html:19
+#: VowelCat/templates/files.html:14 VowelCat/templates/register.html:19
 #: VowelCat/templates/update_user.html:12
 msgid "Submit"
 msgstr "Enviar"
@@ -120,6 +120,14 @@ msgstr "Practicar"
 #: VowelCat/templates/user_base.html:62
 msgid "Logout"
 msgstr "Cerrar sesión"
+
+#: VowelCat/templates/user_home.html:7
+msgid "Hello!"
+msgstr "¡Hola!"
+
+#: VowelCat/templates/user_home.html:9
+msgid "Hello, {{user.get_short_name}}!"
+msgstr "¡Hola, {{user.get_short_name}}!"
 
 #: VowelCatApp/forms.py:12
 msgid "Male"
