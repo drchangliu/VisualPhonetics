@@ -3,14 +3,13 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, date_of_birth, gender, user_type, password=None):
+    def create_user(self, email, gender, user_type, password=None):
         if not email:
             raise ValueError('Users must have an email address')
 
         user = self.model(
             email=MyUserManager.normalize_email(email),
             is_staff = False,
-	    date_of_birth = date_of_birth,
 	    gender=gender,
 	    user_type=user_type,
         )
@@ -19,15 +18,13 @@ class MyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password, date_of_birth, gender, user_type):
+    def create_superuser(self, email, password, gender, user_type):
         user = self.create_user(
 	    email,
             password=password,
-	    date_of_birth=date_of_birth,
 	    gender=gender,
 	    user_type=user_type,
         )
-	user.set_adult()
 	user.is_staff = True
         user.save(using=self._db)
         return user
@@ -53,9 +50,7 @@ class MyUser(AbstractBaseUser):
     is_staff = models.BooleanField('is staff', default=False)
     first_name = models.TextField('first name', default=None, null=True)
     last_name = models.TextField('last name', default=None, null=True)
-    date_of_birth = models.DateField('date of birth', null=True)
     avatar = models.ImageField('profile picture', upload_to='staticfiles/media/images/avatars/', default="static/media/images/blank-user.jpg", null=True, blank=True)
-    adult = models.BooleanField('is adult', default=False)
     gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES)
     user_type = models.CharField('user type', max_length=1, choices=USER_TYPE)
 
@@ -79,19 +74,8 @@ class MyUser(AbstractBaseUser):
             return self.first_name
 	return self.email
 
-    def is_adult(self):
-  	return self.adult
-
     def set_avatar(self):
 	self.has_picture = True
-
-    def set_adult(self):
-        today = date.today()
-        age = today.year - self.date_of_birth.year - ((today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day))
-        if age >= 18:
-	  self.adult = True
-        else:
-	  self.adult = False
 
     def __unicode__(self):
         return self.email

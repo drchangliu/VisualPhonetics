@@ -3,7 +3,9 @@
 
 {% load static %}
 
-<html lang="en">
+{% load i18n %}
+
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +14,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="{% static "media/images/favicon.ico" %}">
 
-    <title>VowelCat - Vowel Visualization</title>
+    <title>{% trans "VowelCat - Vowel Visualization"%}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "static/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -41,20 +43,20 @@
             <span class="icon-bar"></span>
           </button>
 	  
-          <a class="navbar-brand" href="/"> Home</a>
-          <a class="navbar-brand" href="/download/"> Download</a>
+          <a class="navbar-brand" href="{% url 'home' %}"> {% trans "Home"%}</a>
+          <a class="navbar-brand" href="{% url 'download' %}"> {% trans "Downloads"%}</a>
           
 	</div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form" method="post" action="/auth/"> {% csrf_token %}
+          <form class="navbar-form navbar-right" role="form" method="post" action="{% url 'auth' %}"> {% csrf_token %}
             <div class="form-group">
               <input type="text" placeholder="Email" name='username' class="form-control">
             </div>
             <div class="form-group">
               <input type="password" placeholder="Password" name='password' class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-	    <a class="btn btn-primary" href="/register/">Sign up</a>
+            <button type="submit" class="btn btn-primary">{% trans "Login"%}</button>
+	    <a class="btn btn-primary" href="{% url 'register' %}">{% trans "Register"%}</a>
           </form>
         </div><!--/.navbar-collapse -->
       </div>

@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+
 from .forms import MyRegistrationForm, MyChangeForm
 
 def home(request):
@@ -34,14 +35,25 @@ def auth_view(request):
      return HttpResponseRedirect('/invalid/')
 
 def register_user(request):
+   args = {}
+   args.update(csrf(request))
+
    if request.method == 'POST':
       form = MyRegistrationForm(request.POST)
       if form.is_valid():
+         print "Is valid"
          form.save()
-   	 return HttpResponseRedirect('/register_success/')
-   args = {}
-   args.update(csrf(request))
-   args['form'] = MyRegistrationForm()
+         return HttpResponseRedirect('/register_success/')
+      else:
+         print "Is invalid"  
+         args = {}
+         args.update(csrf(request))
+         args['form'] = form
+   else:
+       args = {}
+       args.update(csrf(request))
+       args['form'] = MyRegistrationForm()
+
    return render_to_response('register.html', args, context_instance=RequestContext(request))
 
 def register_success(request):

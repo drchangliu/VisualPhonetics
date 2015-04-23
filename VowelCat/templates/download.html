@@ -2,11 +2,13 @@
 
 {% load static %}
 
+{% load i18n %}
 
 {% block content %}
-<h2>Downloadable content</h2>
 
-<a href="{% static "releases/symbols.zip" %}" download>Here are some starting charts!</a><br><br>
+<h2>{% trans "Downloadable content"%}</h2>
+
+<a href="{% static "releases/symbols.zip" %}" download>Charts</a><br><br>
 
 <a href="{% static "releases/VowelCat.dmg" %}" download>Mac</a><br><br>
 

@@ -40,8 +40,9 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',      
+    'django.middleware.locale.LocaleMiddleware',    
+    'django.middleware.common.CommonMiddleware', 
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -54,6 +55,10 @@ ROOT_URLCONF = 'VowelCat.urls'
 WSGI_APPLICATION = 'VowelCat.wsgi.application'
 
 AUTH_USER_MODEL = 'VowelCatApp.MyUser'
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -68,7 +73,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -101,6 +106,15 @@ STATICFILES_DIRS = (
    os.path.join(os.path.dirname(BASE_DIR), "VowelCat", "static"),
 )
 
+from django.utils.translation import ugettext_lazy as _
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('zh', _('Chinese')),
+)
+
+"""
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
@@ -117,3 +131,4 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+"""
