@@ -31,9 +31,9 @@ def auth_view(request):
 
    if user is not None:
      auth.login(request, user)
-     return HttpResponseRedirect('/')
+     return HttpResponseRedirect(reverse('home'))
    else:
-     return HttpResponseRedirect('/invalid/')
+     return HttpResponseRedirect(reverse('invalid'))
 
 def register_user(request):
    args = {}
@@ -42,11 +42,9 @@ def register_user(request):
    if request.method == 'POST':
       form = MyRegistrationForm(request.POST)
       if form.is_valid():
-         print "Is valid"
          form.save()
          return HttpResponseRedirect(reverse('register_success'))
       else:
-         print "Is invalid"  
          args = {}
          args.update(csrf(request))
          args['form'] = form
@@ -61,24 +59,24 @@ def register_success(request):
    return render_to_response('register_success.html', context_instance=RequestContext(request))
 
 
-@login_required(login_url='/')
+@login_required(login_url=reverse('home'))
 def update_user(request):
     if request.method == 'POST':
         form = MyChangeForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             user = form.save(commit=False)
             user.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('home'))
     else:
         form = MyChangeForm(instance=request.user)
     return render_to_response('update_user.html', {'form': form}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/')
+@login_required(login_url=reverse('home'))
 def files(request):
   return render_to_response('files.html', context_instance=RequestContext(request))
 
-@login_required(login_url='/')    
+@login_required(login_url=reverse('home'))  
 def practice(request):
   return render_to_response('practice.html', context_instance=RequestContext(request))
 
@@ -89,14 +87,14 @@ def download(request):
     base_template_name = 'login_download.html'
   return render_to_response('download.html', {'base_template_name':base_template_name}, context_instance=RequestContext(request))
 
-@login_required(login_url='/')
+@login_required(login_url=reverse('home'))
 def listening(request):
   return render_to_response('listening.html', context_instance=RequestContext(request))
 
-@login_required(login_url='/')
+@login_required(login_url=reverse('home'))
 def training(request):
   return render_to_response('training.html', context_instance=RequestContext(request))
 
-@login_required(login_url='/')
+@login_required(login_url=reverse('home'))
 def upload(request):
   return render_to_response('upload.html', context_instance=RequestContext(request))
