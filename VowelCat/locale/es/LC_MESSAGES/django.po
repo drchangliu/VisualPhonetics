@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-23 17:40+0000\n"
+"POT-Creation-Date: 2015-04-23 18:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,13 +121,11 @@ msgstr "Practicar"
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: VowelCat/templates/user_home.html:7
-msgid "Hello!"
-msgstr "¡Hola!"
-
-#: VowelCat/templates/user_home.html:9
-msgid "Hello, {{user.get_short_name}}!"
-msgstr "¡Hola, {{user.get_short_name}}!"
+#: VowelCat/templates/user_home.html:6
+#, fuzzy
+#| msgid "Hello!"
+msgid "Hello"
+msgstr "Hola"
 
 #: VowelCatApp/forms.py:12
 msgid "Male"
@@ -1898,3 +1896,11 @@ msgstr ""
 #: venv/lib/python2.7/site-packages/pip/_vendor/html5lib/treewalkers/lxmletree.py:172
 msgid "Text nodes have no children"
 msgstr ""
+
+#~ msgid "Hello!"
+#~ msgstr "¡Hola!"
+
+#, fuzzy
+#~| msgid "Hello, %(user.get_short_name)s!"
+#~ msgid "Hello, %(name)s!"
+#~ msgstr "¡Hola, %(name)s!"
