@@ -16,6 +16,15 @@ This project was developed using Python 2.7
 
 ### Usage
 
+After installing the requirements, you can start the server by issuing
+
+`python manage.py runserver portnumber`. It defaults to port 8000.
+
+A superuser can be created with `python manage.py createsuperuser`.
+
+Superusers can access `/admin/`.
+
+To deploy locally, change `VowelCat.settings.DEPLOY` to `False`; conversely, set it to `True` to deploy to Heroku.
 
 ### Changelog
 
